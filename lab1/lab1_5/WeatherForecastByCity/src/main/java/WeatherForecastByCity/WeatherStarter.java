@@ -1,14 +1,17 @@
-package weather;
+package WeatherForecastByCity;
 
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import IpmaApiClient.IpmaCityForecast;
+import IpmaApiClient.IpmaService;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import weather.ipma_client.IpmaCityForecast; //may need to adapt package name
-import weather.ipma_client.IpmaService;
+//import weather.ipma_client.IpmaCityForecast; //may need to adapt package name
+//import weather.ipma_client.IpmaService;
 
 /**
  * demonstrates the use of the IPMA API for weather forecast

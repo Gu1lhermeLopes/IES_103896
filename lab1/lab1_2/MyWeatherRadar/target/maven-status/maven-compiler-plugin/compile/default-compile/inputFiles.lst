@@ -1,1 +1,4 @@
-/home/gui/ies/IES_103896/lab1/lab1_2/MyWeatherRadar/src/main/java/weather/App.java
+/home/gui/ies/IES_103896/lab1/lab1_2/MyWeatherRadar/src/main/java/weather/WeatherStarter.java
+/home/gui/ies/IES_103896/lab1/lab1_2/MyWeatherRadar/src/main/java/weather/ipma_client/IpmaCityForecast.java
+/home/gui/ies/IES_103896/lab1/lab1_2/MyWeatherRadar/src/main/java/weather/ipma_client/IpmaService.java
+/home/gui/ies/IES_103896/lab1/lab1_2/MyWeatherRadar/src/main/java/weather/ipma_client/CityForecast.java
