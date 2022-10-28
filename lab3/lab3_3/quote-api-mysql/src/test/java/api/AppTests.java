@@ -1,13 +1,13 @@
-package com.bezkoder.spring.hibernate.onetomany;
+/*package api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootOneToManyApplicationTests {
+class AppTests {
 
 	@Test
 	void contextLoads() {
 	}
 
-}
+}*/

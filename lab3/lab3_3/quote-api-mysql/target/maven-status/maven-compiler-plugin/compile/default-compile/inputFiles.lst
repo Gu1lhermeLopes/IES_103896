@@ -7,3 +7,4 @@
 /home/gui/ies/IES_103896/lab3/lab3_3/quote-api-mysql/src/main/java/api/exception/ErrorMessage.java
 /home/gui/ies/IES_103896/lab3/lab3_3/quote-api-mysql/src/main/java/api/repository/QuoteRepository.java
 /home/gui/ies/IES_103896/lab3/lab3_3/quote-api-mysql/src/main/java/api/repository/MovieRepository.java
+/home/gui/ies/IES_103896/lab3/lab3_3/quote-api-mysql/src/main/java/api/service/ApiService.java
