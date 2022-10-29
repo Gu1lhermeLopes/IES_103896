@@ -45,7 +45,13 @@ procedure quite similar to 3.2
 ## Review questions
 
 #### @RestController vs @Controller
+  - @RestController combine two annotations: @Controller and @ResponseBody, smoothing the developement
 #### UML diagram
-#### @Table @Colum @Id
+#### @Table
+  - define database's table where entity will be saved
+#### @Colum
+  - mapping a atribute as column of database's table
+#### @Id
+  - define a atribute as Primary Key of database's table
 #### @Autowired
-  - is using to mark a depe
+  - in our's cases is used to avoid create setters in repository
