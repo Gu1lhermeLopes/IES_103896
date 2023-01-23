@@ -40,12 +40,20 @@ $ docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKID
 
 | Method        | Path          | Description  |
 | :------------- |:-------------| :-----:|
-| POST     | api/add/movie | Create a new movie |
-| POST     | api/add/quote/<movieId>      |   Add a quote to a existing movie |
-| GET | api/all/movies      |    List all movies |
-| GET | api/all/quotes      |    List all quotes |
-| GET | api/quotes/<movieId>     |    Return a random quote for the <movieId>|
-| GET | api/quotes      |    Return a random quote |
+| GET     | api/meetings/date | List meetings by date |
+| GET     | api/meetings/date/{start}/{end} | List meetings between dates |
+| GET     | api/meetings/{id} | Return meeting |
+| GET     | api/meetings/{id}/c | Return meeting contacts |
+| GET     | api/contacts | List contacts |
+| PUT     | api/meetings/{id}/{contactId} | Add contact to meeting |
+| PUT     | api/meetings/{id}/{contactId}/r | Remove contact from meeting |
+| POST     | api/contacts/add | Add contacts |
+| POST     | api/meetings/add | Add meetings |
+| POST     | api/meetings/{id}/duplicate | Clone meeting |
+| DELETE     | api/meetings/{id}/delete | Delete meeting |
+| DELETE     | api/contacts/{id}/delete | Delete contact |
+
+
   
   
 
