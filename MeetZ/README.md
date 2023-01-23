@@ -1,36 +1,42 @@
 # LAB 3
 
-## 3.2 exposing data with REST interface
+## Docker Installation
 
-create a MySQL server's instance using [Docker container](https://hub.docker.com/_/mysql)
+### Network
 
  ```bash
-$ docker run --name mysql5 -e MYSQL_ROOT_PASSWORD=secret1 -e MYSQL_DATABASE=demo -e MYSQL_USER=demo -e MYSQL_PASSWORD=secret2 -p 33060:3306 -d mysql/mysqlserver:5.7
+$ docker network create spring-sql
 ```
 
-create a project Spring Boot with next dependencies
-- Spring Web
-- Spring Data JPA
-- MySQL driver
-- DevTools
-- Validation
+### MySQL
 
-Follow this [tutorial](https://www.javaguides.net/2018/09/spring-boot-2-jpa-mysql-crud-example.html)
-
-Define database in **application.properties** file
  ```bash
-# MySQL
-spring.datasource.url=jdbc:mysql://127.0.0.1:33060/demo
-spring.datasource.username=demo
-spring.datasource.password=secret2
-spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
-# Strategy to auto update the schemas (create, create-drop, validate, update)
-spring.jpa.hibernate.ddl-auto = update
+$ docker run --name mysqlnet --network spring-sql -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=meetz -e MYSQL_USER=user -e MYSQL_PASSWORD=1234 -d mysql:5.7
+```
+
+### BackEnd
+- in folder ```MeetingApp```
+ ```bash
+ #BUILD IMAGE
+$ docker build -t backend-meetz .
+ #RUN CONTAINER
+$ docker run --network spring-sql --name backend-meetz-ct -p 8080:8080 -d backend-meetz
+```
+
+### FrontEnd
+- in folder ```front```
+ ```bash
+ #BUILD IMAGE
+$ docker build -t front-meetz .
+ #RUN CONTAINER
+$ docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true front-meetz
 ```
 
 
-## 3.3 Random quote API 2.0
-procedure quite similar to 3.2
+
+
+
+## 3.3 API EndPoints
 
 | Method        | Path          | Description  |
 | :------------- |:-------------| :-----:|
@@ -42,16 +48,4 @@ procedure quite similar to 3.2
 | GET | api/quotes      |    Return a random quote |
   
   
-## Review questions
 
-#### @RestController vs @Controller
-  - @RestController combine two annotations: @Controller and @ResponseBody, smoothing the developement
-#### UML diagram
-#### @Table
-  - define database's table where entity will be saved
-#### @Colum
-  - mapping a atribute as column of database's table
-#### @Id
-  - define a atribute as Primary Key of database's table
-#### @Autowired
-  - in our's cases is used to avoid create setters in repository
